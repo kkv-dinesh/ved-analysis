@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VED Analysis Results</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+        }
+        h1, h2 {
+            color: black;
+        }
+        .gap {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VED Analysis Results</h1>
+        <div class="gap"></div>
+        <h2>Results Table:</h2>
+        <table>
+            <tr>
+                <th>Sub Category</th>
+                <th>Forecasted Demand</th>
+                <th>Cumulative Demand</th>
+                <th>Percentage Demand</th>
+                <th>Cumulative Percentage</th>
+                <th>VED Category</th>
+            </tr>
+            {% for result in ved_results %}
+            <tr>
+                <td>{{ result.Sub_Category }}</td>
+                <td>{{ result.Forecasted_Demand }}</td>
+                <td>{{ result.Cumulative_Demand }}</td>
+                <td>{{ result.Percentage_Demand }}</td>
+                <td>{{ result.Cumulative_Percentage }}</td>
+                <td>{{ result.VED_Category }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="gap"></div>
+        <h2>Chart:</h2>
+        <img src="{{ url_for('static', filename='ved_chart3.png') }}" alt="VED Chart">
+    </div>
+</body>
+</html>

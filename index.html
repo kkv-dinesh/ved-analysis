@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Upload</title>
+  <link href="/static/home.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="home-container">
+    <div class="home-hero">
+      <div class="home-container1">
+        <div class="home-card">
+          <h1 class="home-text">&nbsp;&nbsp;&nbsp;VED ANALYSIS</h1>
+          <h2 class="home-text1">&nbsp;&nbsp;&nbsp;Upload and analyze your products</h2>
+          <div class="home-container2">
+            <div class="home-container3">
+              <div class="primary-pink-button-container">
+		<form action="{{ url_for('upload') }}" method = "POST" enctype="multipart/form-data" >
+                <input type="file" name="file" id="fileInput" style="display: none;">
+                <button type="button" class="home-button button ButtonSmall" onclick="chooseFile()">Choose a File</button>
+                <!-- Add this to your index.html -->
+  		<button  class="home-button button ButtonSmall" type="submit">Upload</button>
+</form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img alt="image" src="/static/curved6-1500h.jpg" class="home-image"/>
+    <img alt="image" src="/static/curved6-1500h.jpg" class="home-image-copy"/>
+    <section class="home-testimonials">
+      <img alt="image" src="/static/curved6-1500h.jpg" class="home-image1" />
+    </section>
+  </div>
+
+  <script>
+    function chooseFile() {
+      var fileInput = document.getElementById('fileInput');
+      fileInput.click();
+    }
+  </script>
+</body>
+</html>
